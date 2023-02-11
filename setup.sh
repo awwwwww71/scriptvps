@@ -39,7 +39,7 @@ maswayvpnnnn="raw.githubusercontent.com/mymasway/scriptvps/main/shadowsocks"
 # Link Hosting Kalian Untuk Wireguard
 maswayvpnnnnn="raw.githubusercontent.com/mymasway/scriptvps/main/wireguard"
 # Link Hosting Kalian Untuk Xray
-maseayvpnnnnnn="raw.githubusercontent.com/mymasway/XRAY/main/xray"
+maseayvpnnnnnn="raw.githubusercontent.com/mymasway/scriptvps/main/xray"
 # Link Hosting Kalian Untuk Ipsec
 maswayvpnnnnnnn="raw.githubusercontent.com/mymasway/scriptvps/main/ipsec"
 # Link Hosting Kalian Untuk Backup
@@ -64,7 +64,7 @@ mkdir /var/lib/akbarstorevpn;
 echo "IP=" >> /var/lib/akbarstorevpn/ipvps.conf
 wget https://${maswayvpn}/cf.sh && chmod +x cf.sh && ./cf.sh
 #install v2ray
-wget https://${maswayvpnnnnnn}/install.sh && chmod +x install.sh && screen -S xray ./install.sh
+wget https://${maswayvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 #install ssh ovpn
 wget https://${maswayvpn}/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 wget https://${maswayvpnn}/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
@@ -72,7 +72,7 @@ wget https://${maswayvpnn}/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.
 wget https://${maswayvpnnn}/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
 wget https://${maswayvpnnnn}/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #installwg
-wget https://${maswatvpnnnnn}/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
+wget https://${maswayvpnnnnn}/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install L2TP
 wget https://${maswayvpnnnnnnn}/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
 wget https://${maswayvpnnnnnnnn}/set-br.sh && chmod +x set-br.sh && ./set-br.sh
@@ -86,7 +86,7 @@ rm -f /root/sstp.sh
 rm -f /root/wg.sh
 rm -f /root/ss.sh
 rm -f /root/ssr.sh
-rm -f /root/install.sh
+rm -f /root/ins-xray.sh
 rm -f /root/ipsec.sh
 rm -f /root/set-br.sh
 rm -f /root/edu.sh
@@ -106,8 +106,8 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://${maswayvpn}/set.sh"
-chmod +x /etc/set.sh
+#wget -O /etc/set.sh "https://${maswayvpn}/set.sh"
+#chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
 echo " "
